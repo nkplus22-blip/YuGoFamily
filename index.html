@@ -5,143 +5,159 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yugo Family</title>
   <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Swiper.js CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+
+  <!-- Animacije -->
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-      background: #f5f5f5;
-      color: #222;
-      text-align: center;
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease-in-out;
     }
-    header {
-      background: #000;
-      color: #fff;
-      padding: 20px;
-    }
-    header img {
-      height: 60px;
-    }
-    h1 {
-      margin: 10px 0 0;
-    }
-    section {
-      padding: 20px;
-    }
-    .paket, .review {
-      background: #fff;
-      margin: 20px auto;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 400px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .paket h3, .review h3 {
-      margin-top: 0;
-    }
-    .paket a, .paket button {
-      display: inline-block;
-      margin: 10px 5px;
-      padding: 10px 15px;
-      background: #000;
-      color: #fff;
-      text-decoration: none;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .paket a:hover, .paket button:hover {
-      background: #333;
-    }
-    #ibanPopup {
-      display:none;
-      position:fixed;
-      top:20%; left:50%;
-      transform:translateX(-50%);
-      padding:20px;
-      background:#fff;
-      border:1px solid #333;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      z-index:1000;
-    }
-    .stars {
-      color: gold;
-      font-size: 20px;
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
-<body>
-  <header>
-    <img src="favicon.png" alt="Yugo Family Logo" />
-    <h1>Yugo Family</h1>
+<body class="bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white font-sans">
+
+  <!-- HERO SECTION -->
+  <header class="relative h-screen flex flex-col justify-center items-center text-center px-6">
+    <img src="favicon.png" alt="Yugo Family Logo" class="w-28 mb-6 drop-shadow-lg" />
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">Yugo Family IPTV</h1>
+    <p class="text-lg md:text-2xl text-gray-300 max-w-2xl mb-8">Najbolja IPTV ponuda sa vrhunskom kvalitetom. Brza podrška, stabilni kanali i nevjerojatno iskustvo gledanja.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="https://wa.me/4915755749502" target="_blank"
+         class="px-6 py-3 bg-green-500 hover:bg-green-600 rounded-full text-lg font-semibold shadow-lg">
+        WhatsApp Kontakt
+      </a>
+      <a href="https://paypal.me/ikmtvplus" target="_blank"
+         class="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-full text-lg font-semibold shadow-lg">
+        PayPal Uplata
+      </a>
+      <button onclick="toggleModal()"
+         class="px-6 py-3 bg-yellow-500 hover:bg-yellow-600 rounded-full text-lg font-semibold shadow-lg">
+        IBAN Uplata
+      </button>
+    </div>
   </header>
 
-  <main>
-    <section id="paketi">
-      <h2>Naši paketi</h2>
-
-      <div class="paket">
-        <h3>Classic Paket</h3>
-        <a href="https://wa.me/4915755749502?text=Pozdrav%2C%20zelim%20Classic%20paket" target="_blank">WhatsApp</a>
-        <a href="https://www.paypal.me/ikmtvplus" target="_blank">PayPal</a>
-        <button onclick="showIban()">IBAN</button>
+  <!-- PAKETI -->
+  <section class="py-20 px-6 bg-gray-100 text-gray-900">
+    <h2 class="text-4xl font-bold text-center mb-12">Naši paketi</h2>
+    <div class="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
+      <!-- Paket 1 -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 hover:scale-105 transition transform">
+        <h3 class="text-2xl font-bold mb-4">📺 Classic</h3>
+        <p class="text-gray-600 mb-4">Osnovni IPTV paket s velikim brojem kanala.</p>
+        <p class="font-bold text-xl mb-6">€10 / mjesec</p>
+        <a href="https://wa.me/4915755749502" target="_blank"
+           class="block w-full text-center bg-green-500 text-white py-3 rounded-lg hover:bg-green-600">
+          Naruči
+        </a>
       </div>
-
-      <div class="paket">
-        <h3>Medium Paket</h3>
-        <a href="https://wa.me/4915755749502?text=Pozdrav%2C%20zelim%20Medium%20paket" target="_blank">WhatsApp</a>
-        <a href="https://www.paypal.me/ikmtvplus" target="_blank">PayPal</a>
-        <button onclick="showIban()">IBAN</button>
+      <!-- Paket 2 -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 hover:scale-105 transition transform border-4 border-blue-500">
+        <h3 class="text-2xl font-bold mb-4">⭐ Medium</h3>
+        <p class="text-gray-600 mb-4">Pro paket sa sportskim kanalima i dodatnim sadržajem.</p>
+        <p class="font-bold text-xl mb-6">€15 / mjesec</p>
+        <a href="https://wa.me/4915755749502" target="_blank"
+           class="block w-full text-center bg-green-500 text-white py-3 rounded-lg hover:bg-green-600">
+          Naruči
+        </a>
       </div>
-
-      <div class="paket">
-        <h3>Pro Paket</h3>
-        <a href="https://wa.me/4915755749502?text=Pozdrav%2C%20zelim%20Pro%20paket" target="_blank">WhatsApp</a>
-        <a href="https://www.paypal.me/ikmtvplus" target="_blank">PayPal</a>
-        <button onclick="showIban()">IBAN</button>
+      <!-- Paket 3 -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 hover:scale-105 transition transform">
+        <h3 class="text-2xl font-bold mb-4">🚀 Pro</h3>
+        <p class="text-gray-600 mb-4">Premium IPTV paket sa svim kanalima i maksimalnim performansama.</p>
+        <p class="font-bold text-xl mb-6">€20 / mjesec</p>
+        <a href="https://wa.me/4915755749502" target="_blank"
+           class="block w-full text-center bg-green-500 text-white py-3 rounded-lg hover:bg-green-600">
+          Naruči
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="recenzije">
-      <h2>Recenzije korisnika</h2>
-
-      <div class="review">
-        <h3>Marko</h3>
-        <div class="stars">★★★★★</div>
-        <p>Odlična usluga, sve radi perfektno!</p>
+  <!-- RECENZIJE SLIDER -->
+  <section class="py-20 bg-gray-900">
+    <h2 class="text-4xl font-bold text-center mb-12">Šta kažu naši korisnici</h2>
+    <div class="swiper mySwiper max-w-3xl mx-auto">
+      <div class="swiper-wrapper">
+        <!-- Recenzija 1 -->
+        <div class="swiper-slide bg-white text-gray-900 p-8 rounded-2xl shadow-lg">
+          <p class="italic mb-4">"Odlična usluga, stabilni kanali i brza podrška!"</p>
+          <p class="font-bold">- Marko P.</p>
+          <div class="text-yellow-500">★★★★★</div>
+        </div>
+        <!-- Recenzija 2 -->
+        <div class="swiper-slide bg-white text-gray-900 p-8 rounded-2xl shadow-lg">
+          <p class="italic mb-4">"Najbolji IPTV koji sam koristio do sada. Preporuka!"</p>
+          <p class="font-bold">- Ivana K.</p>
+          <div class="text-yellow-500">★★★★★</div>
+        </div>
+        <!-- Recenzija 3 -->
+        <div class="swiper-slide bg-white text-gray-900 p-8 rounded-2xl shadow-lg">
+          <p class="italic mb-4">"Brzo podešavanje i odlična kvaliteta slike."</p>
+          <p class="font-bold">- Emir S.</p>
+          <div class="text-yellow-500">★★★★★</div>
+        </div>
       </div>
+      <!-- Navigacija -->
+      <div class="swiper-pagination mt-4"></div>
+    </div>
+  </section>
 
-      <div class="review">
-        <h3>Ana</h3>
-        <div class="stars">★★★★★</div>
-        <p>Jako sam zadovoljna, preporuka svima.</p>
-      </div>
+  <!-- FOOTER -->
+  <footer class="py-10 bg-black text-gray-400 text-center">
+    <p>© 2025 Yugo Family IPTV - Sva prava zadržana.</p>
+    <p>
+      <a href="privacy.html" class="underline hover:text-white">Politika privatnosti</a> | 
+      <a href="mailto:nkplus22@gmail.com" class="underline hover:text-white">Kontakt e-mail</a>
+    </p>
+  </footer>
 
-      <div class="review">
-        <h3>Ivan</h3>
-        <div class="stars">★★★★☆</div>
-        <p>Super ponuda, mala sitnica bi mogla biti bolja, ali generalno top!</p>
-      </div>
-
-    </section>
-  </main>
-
-  <div id="ibanPopup">
-    <h3>IBAN Podaci</h3>
-    <p><strong>Ime i prezime:</strong> Kenan Mujcinovic</p>
-    <p><strong>IBAN:</strong> IE34 PPSE 9903 8068 2528 25</p>
-    <p><strong>BIC:</strong> PPSEIE22XXX</p>
-    <p><strong>Svrha uplate:</strong> Family</p>
-    <button onclick="closeIban()">Zatvori</button>
+  <!-- IBAN MODAL -->
+  <div id="ibanModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
+    <div class="bg-white text-black p-8 rounded-2xl max-w-md w-full">
+      <h2 class="text-2xl font-bold mb-4">Uplata putem IBAN-a</h2>
+      <p><strong>Ime i Prezime:</strong> Kenan Mujcinovic</p>
+      <p><strong>IBAN:</strong> IE34 PPSE 9903 8068 2528 25</p>
+      <p><strong>BIC:</strong> PPSEIE22XXX</p>
+      <p><strong>Svrha uplate:</strong> Family</p>
+      <button onclick="toggleModal()" class="mt-6 px-6 py-3 bg-red-500 text-white rounded-lg w-full hover:bg-red-600">Zatvori</button>
+    </div>
   </div>
 
+  <!-- Swiper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    function showIban() {
-      document.getElementById('ibanPopup').style.display = 'block';
+    // Animacija fade-in
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".fade-in").forEach(el => {
+        setTimeout(() => el.classList.add("show"), 200);
+      });
+    });
+
+    // IBAN modal
+    function toggleModal() {
+      document.getElementById("ibanModal").classList.toggle("hidden");
     }
-    function closeIban() {
-      document.getElementById('ibanPopup').style.display = 'none';
-    }
+
+    // Swiper slider
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: { delay: 4000 },
+      pagination: { el: ".swiper-pagination", clickable: true },
+    });
   </script>
 </body>
 </html>
