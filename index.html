@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yugo Family</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f5f5f5;
+      color: #222;
+      text-align: center;
+    }
+    header {
+      background: #000;
+      color: #fff;
+      padding: 20px;
+    }
+    header img {
+      height: 60px;
+    }
+    h1 {
+      margin: 10px 0 0;
+    }
+    section {
+      padding: 20px;
+    }
+    .paket, .review {
+      background: #fff;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .paket h3, .review h3 {
+      margin-top: 0;
+    }
+    .paket a, .paket button {
+      display: inline-block;
+      margin: 10px 5px;
+      padding: 10px 15px;
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .paket a:hover, .paket button:hover {
+      background: #333;
+    }
+    #ibanPopup {
+      display:none;
+      position:fixed;
+      top:20%; left:50%;
+      transform:translateX(-50%);
+      padding:20px;
+      background:#fff;
+      border:1px solid #333;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      z-index:1000;
+    }
+    .stars {
+      color: gold;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="favicon.png" alt="Yugo Family Logo" />
+    <h1>Yugo Family</h1>
+  </header>
+
+  <main>
+    <section id="paketi">
+      <h2>Naši paketi</h2>
+
+      <div class="paket">
+        <h3>Classic Paket</h3>
+        <a href="https://wa.me/4915755749502?text=Pozdrav%2C%20zelim%20Classic%20paket" target="_blank">WhatsApp</a>
+        <a href="https://www.paypal.me/ikmtvplus" target="_blank">PayPal</a>
+        <button onclick="showIban()">IBAN</button>
+      </div>
+
+      <div class="paket">
+        <h3>Medium Paket</h3>
+        <a href="https://wa.me/4915755749502?text=Pozdrav%2C%20zelim%20Medium%20paket" target="_blank">WhatsApp</a>
+        <a href="https://www.paypal.me/ikmtvplus" target="_blank">PayPal</a>
+        <button onclick="showIban()">IBAN</button>
+      </div>
+
+      <div class="paket">
+        <h3>Pro Paket</h3>
+        <a href="https://wa.me/4915755749502?text=Pozdrav%2C%20zelim%20Pro%20paket" target="_blank">WhatsApp</a>
+        <a href="https://www.paypal.me/ikmtvplus" target="_blank">PayPal</a>
+        <button onclick="showIban()">IBAN</button>
+      </div>
+    </section>
+
+    <section id="recenzije">
+      <h2>Recenzije korisnika</h2>
+
+      <div class="review">
+        <h3>Marko</h3>
+        <div class="stars">★★★★★</div>
+        <p>Odlična usluga, sve radi perfektno!</p>
+      </div>
+
+      <div class="review">
+        <h3>Ana</h3>
+        <div class="stars">★★★★★</div>
+        <p>Jako sam zadovoljna, preporuka svima.</p>
+      </div>
+
+      <div class="review">
+        <h3>Ivan</h3>
+        <div class="stars">★★★★☆</div>
+        <p>Super ponuda, mala sitnica bi mogla biti bolja, ali generalno top!</p>
+      </div>
+
+    </section>
+  </main>
+
+  <div id="ibanPopup">
+    <h3>IBAN Podaci</h3>
+    <p><strong>Ime i prezime:</strong> Kenan Mujcinovic</p>
+    <p><strong>IBAN:</strong> IE34 PPSE 9903 8068 2528 25</p>
+    <p><strong>BIC:</strong> PPSEIE22XXX</p>
+    <p><strong>Svrha uplate:</strong> Family</p>
+    <button onclick="closeIban()">Zatvori</button>
+  </div>
+
+  <script>
+    function showIban() {
+      document.getElementById('ibanPopup').style.display = 'block';
+    }
+    function closeIban() {
+      document.getElementById('ibanPopup').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
