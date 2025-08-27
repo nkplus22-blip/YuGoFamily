@@ -1,163 +1,188 @@
 <!DOCTYPE html>
-<html lang="hr">
+<html lang="bs">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yugo Family</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
-
-  <!-- Tailwind CSS -->
+  <title>Yugo Family IPTV</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Swiper.js CSS -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-  />
-
-  <!-- Animacije -->
   <style>
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 1s ease-in-out;
+    body {
+      background: radial-gradient(circle at top, #0f172a, #000);
+      color: white;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
     }
-    .fade-in.show {
-      opacity: 1;
-      transform: translateY(0);
+    header {
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(10px);
+    }
+    .hover-glow:hover {
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+      transform: scale(1.05);
+      transition: all 0.3s ease-in-out;
     }
   </style>
 </head>
-<body class="bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white font-sans">
+<body class="antialiased">
 
-  <!-- HERO SECTION -->
-  <header class="relative h-screen flex flex-col justify-center items-center text-center px-6">
-    <img src="favicon.png" alt="Yugo Family Logo" class="w-28 mb-6 drop-shadow-lg" />
-    <h1 class="text-4xl md:text-6xl font-bold mb-4">Yugo Family IPTV</h1>
-    <p class="text-lg md:text-2xl text-gray-300 max-w-2xl mb-8">Najbolja IPTV ponuda sa vrhunskom kvalitetom. Brza podrška, stabilni kanali i nevjerojatno iskustvo gledanja.</p>
-    <div class="flex flex-wrap gap-4 justify-center">
-      <a href="https://wa.me/4915755749502" target="_blank"
-         class="px-6 py-3 bg-green-500 hover:bg-green-600 rounded-full text-lg font-semibold shadow-lg">
-        WhatsApp Kontakt
-      </a>
-      <a href="https://paypal.me/ikmtvplus" target="_blank"
-         class="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-full text-lg font-semibold shadow-lg">
-        PayPal Uplata
-      </a>
-      <button onclick="toggleModal()"
-         class="px-6 py-3 bg-yellow-500 hover:bg-yellow-600 rounded-full text-lg font-semibold shadow-lg">
-        IBAN Uplata
-      </button>
-    </div>
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full z-50 shadow-md">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="Yugo Family" class="h-12">
+        <h1 class="text-xl font-bold">Yugo Family IPTV</h1>
+      </div>
+      <ul class="hidden md:flex gap-8 font-medium">
+        <li><a href="#paketi" class="hover:text-cyan-400">Paketi</a></li>
+        <li><a href="#testimonials" class="hover:text-cyan-400">Recenzije</a></li>
+        <li><a href="#filmovi" class="hover:text-cyan-400">Filmovi</a></li>
+        <li><a href="#kontakt" class="hover:text-cyan-400">Kontakt</a></li>
+      </ul>
+      <a href="https://wa.me/4915755749502" class="bg-cyan-500 text-black px-4 py-2 rounded-xl font-bold hover:bg-cyan-400">WhatsApp</a>
+    </nav>
   </header>
 
-  <!-- PAKETI -->
-  <section class="py-20 px-6 bg-gray-100 text-gray-900">
+  <!-- Hero -->
+  <section class="h-screen flex flex-col justify-center items-center text-center relative">
+    <h2 class="text-5xl md:text-6xl font-extrabold mb-6 animate-fade-in">Najbolji IPTV doživljaj</h2>
+    <p class="text-lg md:text-2xl text-gray-300 max-w-2xl mb-8">Uživajte u hiljadama kanala, filmova i serija uz vrhunsku kvalitetu slike i stabilnost.</p>
+    <a href="#paketi" class="bg-cyan-500 text-black px-8 py-3 rounded-2xl font-bold hover:bg-cyan-400">Pogledaj pakete</a>
+  </section>
+
+  <!-- Paketi -->
+  <section id="paketi" class="py-20 px-6">
     <h2 class="text-4xl font-bold text-center mb-12">Naši paketi</h2>
-    <div class="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
-      <!-- Paket 1 -->
-      <div class="bg-white rounded-2xl shadow-lg p-8 hover:scale-105 transition transform">
-        <h3 class="text-2xl font-bold mb-4">📺 Classic</h3>
-        <p class="text-gray-600 mb-4">Osnovni IPTV paket s velikim brojem kanala.</p>
-        <p class="font-bold text-xl mb-6">€10 / mjesec</p>
-        <a href="https://wa.me/4915755749502" target="_blank"
-           class="block w-full text-center bg-green-500 text-white py-3 rounded-lg hover:bg-green-600">
-          Naruči
-        </a>
+    <div class="grid md:grid-cols-3 gap-10 container mx-auto">
+      <div class="bg-gray-900 p-8 rounded-2xl hover-glow">
+        <h3 class="text-2xl font-bold mb-4">Basic</h3>
+        <p class="text-gray-400 mb-6">Idealno za pojedince</p>
+        <p class="text-3xl font-bold mb-6">10€ <span class="text-lg">/mj</span></p>
+        <ul class="text-gray-300 mb-6 space-y-2">
+          <li>✔ 2000+ kanala</li>
+          <li>✔ FullHD kvalitet</li>
+          <li>✔ 1 uređaj</li>
+        </ul>
+        <a href="https://paypal.me/ikmtvplus" class="block bg-cyan-500 text-black py-2 rounded-xl font-bold mb-2">Plati PayPal</a>
+        <button onclick="alert('Kenan Mujcinovic, IBAN: IE34 PPSE 9903 8068 2528 25, BIC: PPSEIE22XXX, SVRHA: Family')" class="block w-full bg-gray-700 py-2 rounded-xl font-bold">Plati IBAN</button>
       </div>
-      <!-- Paket 2 -->
-      <div class="bg-white rounded-2xl shadow-lg p-8 hover:scale-105 transition transform border-4 border-blue-500">
-        <h3 class="text-2xl font-bold mb-4">⭐ Medium</h3>
-        <p class="text-gray-600 mb-4">Pro paket sa sportskim kanalima i dodatnim sadržajem.</p>
-        <p class="font-bold text-xl mb-6">€15 / mjesec</p>
-        <a href="https://wa.me/4915755749502" target="_blank"
-           class="block w-full text-center bg-green-500 text-white py-3 rounded-lg hover:bg-green-600">
-          Naruči
-        </a>
+      <div class="bg-gray-900 p-8 rounded-2xl hover-glow">
+        <h3 class="text-2xl font-bold mb-4">Family</h3>
+        <p class="text-gray-400 mb-6">Za cijelu porodicu</p>
+        <p class="text-3xl font-bold mb-6">20€ <span class="text-lg">/mj</span></p>
+        <ul class="text-gray-300 mb-6 space-y-2">
+          <li>✔ 4000+ kanala</li>
+          <li>✔ FullHD + 4K</li>
+          <li>✔ do 3 uređaja</li>
+        </ul>
+        <a href="https://paypal.me/ikmtvplus" class="block bg-cyan-500 text-black py-2 rounded-xl font-bold mb-2">Plati PayPal</a>
+        <button onclick="alert('Kenan Mujcinovic, IBAN: IE34 PPSE 9903 8068 2528 25, BIC: PPSEIE22XXX, SVRHA: Family')" class="block w-full bg-gray-700 py-2 rounded-xl font-bold">Plati IBAN</button>
       </div>
-      <!-- Paket 3 -->
-      <div class="bg-white rounded-2xl shadow-lg p-8 hover:scale-105 transition transform">
-        <h3 class="text-2xl font-bold mb-4">🚀 Pro</h3>
-        <p class="text-gray-600 mb-4">Premium IPTV paket sa svim kanalima i maksimalnim performansama.</p>
-        <p class="font-bold text-xl mb-6">€20 / mjesec</p>
-        <a href="https://wa.me/4915755749502" target="_blank"
-           class="block w-full text-center bg-green-500 text-white py-3 rounded-lg hover:bg-green-600">
-          Naruči
-        </a>
+      <div class="bg-gray-900 p-8 rounded-2xl hover-glow">
+        <h3 class="text-2xl font-bold mb-4">Premium</h3>
+        <p class="text-gray-400 mb-6">Za prave filmoljupce</p>
+        <p class="text-3xl font-bold mb-6">30€ <span class="text-lg">/mj</span></p>
+        <ul class="text-gray-300 mb-6 space-y-2">
+          <li>✔ 6000+ kanala</li>
+          <li>✔ 4K UltraHD</li>
+          <li>✔ do 5 uređaja</li>
+        </ul>
+        <a href="https://paypal.me/ikmtvplus" class="block bg-cyan-500 text-black py-2 rounded-xl font-bold mb-2">Plati PayPal</a>
+        <button onclick="alert('Kenan Mujcinovic, IBAN: IE34 PPSE 9903 8068 2528 25, BIC: PPSEIE22XXX, SVRHA: Family')" class="block w-full bg-gray-700 py-2 rounded-xl font-bold">Plati IBAN</button>
       </div>
     </div>
   </section>
 
-  <!-- RECENZIJE SLIDER -->
-  <section class="py-20 bg-gray-900">
-    <h2 class="text-4xl font-bold text-center mb-12">Šta kažu naši korisnici</h2>
-    <div class="swiper mySwiper max-w-3xl mx-auto">
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-20 bg-gray-800">
+    <h2 class="text-4xl font-bold text-center mb-12">Šta naši korisnici kažu</h2>
+    <div class="swiper mySwiperTestimonials container mx-auto">
       <div class="swiper-wrapper">
-        <!-- Recenzija 1 -->
-        <div class="swiper-slide bg-white text-gray-900 p-8 rounded-2xl shadow-lg">
-          <p class="italic mb-4">"Odlična usluga, stabilni kanali i brza podrška!"</p>
-          <p class="font-bold">- Marko P.</p>
-          <div class="text-yellow-500">★★★★★</div>
+        <div class="swiper-slide bg-gray-900 p-8 rounded-2xl shadow-md">
+          <p class="italic mb-4">“Već dugo tražim pouzdanu IPTV uslugu, i Yugo Family me oduševio. Kvalitet slike je savršen, a podrška brza i profesionalna.”</p>
+          <h4 class="font-semibold">- Amir H.</h4>
         </div>
-        <!-- Recenzija 2 -->
-        <div class="swiper-slide bg-white text-gray-900 p-8 rounded-2xl shadow-lg">
-          <p class="italic mb-4">"Najbolji IPTV koji sam koristio do sada. Preporuka!"</p>
-          <p class="font-bold">- Ivana K.</p>
-          <div class="text-yellow-500">★★★★★</div>
+        <div class="swiper-slide bg-gray-900 p-8 rounded-2xl shadow-md">
+          <p class="italic mb-4">“Kao menadžer s malo slobodnog vremena, bitno mi je da sve radi bez greške. Uz Yugo Family konačno uživam u omiljenim filmovima bez prekida.”</p>
+          <h4 class="font-semibold">- Ivana M.</h4>
         </div>
-        <!-- Recenzija 3 -->
-        <div class="swiper-slide bg-white text-gray-900 p-8 rounded-2xl shadow-lg">
-          <p class="italic mb-4">"Brzo podešavanje i odlična kvaliteta slike."</p>
-          <p class="font-bold">- Emir S.</p>
-          <div class="text-yellow-500">★★★★★</div>
+        <div class="swiper-slide bg-gray-900 p-8 rounded-2xl shadow-md">
+          <p class="italic mb-4">“Instalacija je bila brza, a izbor sadržaja ogroman. Posebno mi se dopada što cijela porodica može gledati različite stvari u isto vrijeme.”</p>
+          <h4 class="font-semibold">- Stefan D.</h4>
         </div>
       </div>
-      <!-- Navigacija -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
       <div class="swiper-pagination mt-4"></div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="py-10 bg-black text-gray-400 text-center">
-    <p>© 2025 Yugo Family IPTV - Sva prava zadržana.</p>
-    <p>
-      <a href="privacy.html" class="underline hover:text-white">Politika privatnosti</a> | 
-      <a href="mailto:nkplus22@gmail.com" class="underline hover:text-white">Kontakt e-mail</a>
-    </p>
+  <!-- Movies -->
+  <section id="filmovi" class="py-20 px-6">
+    <h2 class="text-4xl font-bold text-center mb-12">Top 5 svjetskih filmova</h2>
+    <div class="swiper mySwiperMovies container mx-auto">
+      <div class="swiper-wrapper" id="movies"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination mt-4"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="kontakt" class="bg-gray-900 py-10 text-center">
+    <p class="mb-4">📧 Email: nkplus22@gmail.com</p>
+    <div class="flex justify-center gap-6 text-xl">
+      <a href="https://wa.me/4915755749502" target="_blank">💬 WhatsApp</a>
+      <a href="https://paypal.me/ikmtvplus" target="_blank">💳 PayPal</a>
+      <a href="#" target="_blank">📺 Instagram</a>
+    </div>
+    <p class="mt-6 text-gray-500">© 2025 Yugo Family IPTV. Sva prava zadržana.</p>
   </footer>
 
-  <!-- IBAN MODAL -->
-  <div id="ibanModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
-    <div class="bg-white text-black p-8 rounded-2xl max-w-md w-full">
-      <h2 class="text-2xl font-bold mb-4">Uplata putem IBAN-a</h2>
-      <p><strong>Ime i Prezime:</strong> Kenan Mujcinovic</p>
-      <p><strong>IBAN:</strong> IE34 PPSE 9903 8068 2528 25</p>
-      <p><strong>BIC:</strong> PPSEIE22XXX</p>
-      <p><strong>Svrha uplate:</strong> Family</p>
-      <button onclick="toggleModal()" class="mt-6 px-6 py-3 bg-red-500 text-white rounded-lg w-full hover:bg-red-600">Zatvori</button>
-    </div>
-  </div>
-
-  <!-- Swiper.js -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    // Animacija fade-in
-    document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll(".fade-in").forEach(el => {
-        setTimeout(() => el.classList.add("show"), 200);
+    // Testimonials slider
+    new Swiper(".mySwiperTestimonials", {
+      slidesPerView: 1,
+      autoplay: { delay: 4000, disableOnInteraction: false },
+      pagination: { el: ".mySwiperTestimonials .swiper-pagination", clickable: true },
+      navigation: {
+        nextEl: ".mySwiperTestimonials .swiper-button-next",
+        prevEl: ".mySwiperTestimonials .swiper-button-prev",
+      },
+    });
+
+    // Movies slider
+    new Swiper(".mySwiperMovies", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      autoplay: { delay: 3000, disableOnInteraction: false },
+      pagination: { el: ".mySwiperMovies .swiper-pagination", clickable: true },
+      navigation: {
+        nextEl: ".mySwiperMovies .swiper-button-next",
+        prevEl: ".mySwiperMovies .swiper-button-prev",
+      },
+      breakpoints: {
+        640: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      }
+    });
+
+    // Fetch Top 5 movies
+    fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=622204a50e67a414e418580e6df24473&language=en-US&page=1")
+      .then(res => res.json())
+      .then(data => {
+        const movies = data.results.slice(0, 5);
+        const container = document.getElementById("movies");
+        movies.forEach(m => {
+          container.innerHTML += `
+            <div class="swiper-slide bg-gray-900 p-6 rounded-2xl shadow-md">
+              <img src="https://image.tmdb.org/t/p/w500${m.poster_path}" class="rounded-lg mb-4"/>
+              <h4 class="font-bold">${m.title}</h4>
+              <p class="text-sm text-gray-400">Ocjena: ⭐ ${m.vote_average}</p>
+            </div>`;
+        });
       });
-    });
-
-    // IBAN modal
-    function toggleModal() {
-      document.getElementById("ibanModal").classList.toggle("hidden");
-    }
-
-    // Swiper slider
-    const swiper = new Swiper(".mySwiper", {
-      loop: true,
-      autoplay: { delay: 4000 },
-      pagination: { el: ".swiper-pagination", clickable: true },
-    });
   </script>
 </body>
 </html>
