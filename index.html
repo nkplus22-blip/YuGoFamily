@@ -1,170 +1,89 @@
 <!DOCTYPE html>
-<html lang="bs">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yugo Family</title>
-  <link rel="icon" href="logo.png" type="image/png">
+  <title>Yugo Family IPTV</title>
+  <link rel="stylesheet" href="style.css">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/style.css">
-
-  <!-- Particles.js -->
-  <script src="assets/particles.min.js"></script>
+  <!-- SwiperJS for slider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </head>
-<body class="bg-black text-white font-inter relative">
-
-  <!-- Background particles -->
-  <div id="particles-js"></div>
-
-  <!-- Header -->
-  <header class="flex justify-between items-center p-6 relative z-10">
-    <img src="logo.png" alt="Yugo Family Logo" class="h-12">
-    <nav class="space-x-6 font-semibold">
-      <a href="#paketi" class="hover:text-cyan-400">Paketi</a>
-      <a href="#filmovi" class="hover:text-cyan-400">Filmovi</a>
-      <a href="#recenzije" class="hover:text-cyan-400">Recenzije</a>
-      <a href="#kontakt" class="hover:text-cyan-400">Kontakt</a>
-    </nav>
+<body>
+  <!-- Hero section -->
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <img src="logo.png" alt="Yugo Family IPTV" class="logo">
+      <h1>Dobrodošli u Yugo Family IPTV</h1>
+      <p>Najbolji TV kanali i filmovi za cijelu porodicu</p>
+      <div class="cta-buttons">
+        <a href="https://paypal.me/ikmtvplus" class="btn">PayPal</a>
+        <a href="mailto:nkplus22@gmail.com" class="icon"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://wa.me/4915755749502" class="icon"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero text-center py-20 relative z-10">
-    <h1 class="text-5xl font-extrabold text-cyan-400">Dobrodošli u Yugo Family</h1>
-    <p class="mt-4 text-lg text-gray-300">Najbolja IPTV usluga za cijelu porodicu, gdje god da ste.</p>
-    <div class="mt-6 space-x-4">
-      <a href="#paketi" class="px-6 py-3 bg-cyan-500 rounded-xl shadow-lg font-bold hover:bg-cyan-400 transition">Pogledaj pakete</a>
-      <a href="https://wa.me/4915755749502" target="_blank" class="px-6 py-3 bg-green-500 rounded-xl shadow-lg font-bold hover:bg-green-400 transition">WhatsApp</a>
+  <!-- Top 5 Movies -->
+  <section class="movies">
+    <h2>🎬 Top 5 Svjetskih Filmova</h2>
+    <div class="movie-grid">
+      <div class="movie">
+        <img src="https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg" alt="Inception">
+        <p>Inception</p>
+      </div>
+      <div class="movie">
+        <img src="https://image.tmdb.org/t/p/w500/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg" alt="Interstellar">
+        <p>Interstellar</p>
+      </div>
+      <div class="movie">
+        <img src="https://image.tmdb.org/t/p/w500/jRXYjXNq0Cs2TcJjLkki24MLp7u.jpg" alt="Avatar">
+        <p>Avatar</p>
+      </div>
+      <div class="movie">
+        <img src="https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg" alt="The Dark Knight">
+        <p>The Dark Knight</p>
+      </div>
+      <div class="movie">
+        <img src="https://image.tmdb.org/t/p/w500/ty8TGRuvJLPUmAR1H1nRIsgwvim.jpg" alt="Gladiator">
+        <p>Gladiator</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>💬 Naši korisnici kažu</h2>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">“Najbolja usluga ikad! Moja porodica uživa svaki dan.” – Marko</div>
+        <div class="swiper-slide">“Veliki izbor kanala i filmova. Sve radi savršeno!” – Ivana</div>
+        <div class="swiper-slide">“Korisnička podrška je fenomenalna. Preporučujem svima!” – Emir</div>
+        <div class="swiper-slide">“Streaming bez prekida, kvalitet vrhunski.” – Jelena</div>
+        <div class="swiper-slide">“Odlični paketi i fer cijene. Svaka čast!” – Stefan</div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-pagination"></div>
     </div>
   </section>
 
-  <!-- Paketi -->
-  <section id="paketi" class="py-20 text-center relative z-10">
-    <h2 class="text-4xl font-bold text-cyan-400 mb-12">Naši Paketi</h2>
-    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
-      <div class="bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-cyan-500/40 transition">
-        <h3 class="text-2xl font-bold mb-4">Basic</h3>
-        <p class="text-gray-400">100+ kanala, HD streaming</p>
-        <p class="text-3xl font-bold my-4">10€ / mj</p>
-      </div>
-      <div class="bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-cyan-500/40 transition border-2 border-cyan-400">
-        <h3 class="text-2xl font-bold mb-4">Standard</h3>
-        <p class="text-gray-400">250+ kanala, Full HD, Filmovi</p>
-        <p class="text-3xl font-bold my-4">15€ / mj</p>
-      </div>
-      <div class="bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-cyan-500/40 transition">
-        <h3 class="text-2xl font-bold mb-4">Premium</h3>
-        <p class="text-gray-400">500+ kanala, Full HD/4K, Sport, Filmovi</p>
-        <p class="text-3xl font-bold my-4">20€ / mj</p>
-      </div>
-    </div>
-
-    <!-- Payment Buttons -->
-    <div class="mt-12 flex justify-center gap-6">
-      <a href="https://paypal.me/ikmtvplus" target="_blank" class="px-6 py-3 bg-blue-600 rounded-xl shadow-lg font-bold hover:bg-blue-500 transition">PayPal</a>
-      <button onclick="alert('IME I PREZIME: Kenan Mujcinovic\nIBAN: IE34 PPSE 9903 8068 2528 25\nBIC: PPSEIE22XXX\nSVRHA: Family');" class="px-6 py-3 bg-cyan-600 rounded-xl shadow-lg font-bold hover:bg-cyan-500 transition">IBAN</button>
-    </div>
-  </section>
-
-  <!-- Filmovi -->
-  <section id="filmovi" class="py-20 relative z-10">
-    <h2 class="text-4xl font-bold text-center text-cyan-400 mb-12">Top 5 Filmova</h2>
-    <div id="film-list" class="grid md:grid-cols-5 gap-6 max-w-6xl mx-auto px-6"></div>
-  </section>
-
-  <!-- Recenzije sa sliderom -->
-  <section id="recenzije" class="py-20 text-center relative z-10">
-    <h2 class="text-4xl font-bold text-cyan-400 mb-12">Šta kažu naši korisnici</h2>
-    <div class="relative max-w-4xl mx-auto">
-      <div id="slider" class="overflow-hidden">
-        <div class="flex transition-transform duration-700" id="slider-inner">
-          <div class="w-full flex-shrink-0 px-6">
-            <p class="text-lg italic text-gray-300">“Najbolja IPTV usluga koju sam ikada koristio. Brza, stabilna i odlična korisnička podrška.”</p>
-            <p class="mt-4 font-bold">- Marko Petrović ⭐⭐⭐⭐⭐</p>
-          </div>
-          <div class="w-full flex-shrink-0 px-6">
-            <p class="text-lg italic text-gray-300">“Puno filmova i sportskih kanala, savršeno za cijelu porodicu.”</p>
-            <p class="mt-4 font-bold">- Ivana Kovačević ⭐⭐⭐⭐⭐</p>
-          </div>
-          <div class="w-full flex-shrink-0 px-6">
-            <p class="text-lg italic text-gray-300">“Preporučujem svima, nema kašnjenja i kvaliteta je vrhunska.”</p>
-            <p class="mt-4 font-bold">- Amir Hadžić ⭐⭐⭐⭐⭐</p>
-          </div>
-        </div>
-      </div>
-      <!-- Navigacione strelice -->
-      <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-cyan-600 rounded-full">‹</button>
-      <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-cyan-600 rounded-full">›</button>
-    </div>
-  </section>
-
-  <!-- Kontakt -->
-  <section id="kontakt" class="py-20 text-center relative z-10">
-    <h2 class="text-4xl font-bold text-cyan-400 mb-6">Kontaktirajte nas</h2>
-    <p class="text-lg text-gray-300 mb-4">Email: <a href="mailto:nkplus22@gmail.com" class="text-cyan-400">nkplus22@gmail.com</a></p>
-    <p class="text-lg text-gray-300">WhatsApp: <a href="https://wa.me/4915755749502" class="text-cyan-400">+49 157 55749502</a></p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-6 text-center text-gray-500 relative z-10">
-    © 2025 Yugo Family - Sva prava zadržana
-  </footer>
-
-  <!-- JS -->
   <script>
-    // Load Particles.js
-    particlesJS.load('particles-js', 'assets/particles.json', function() {
-      console.log('Particles.js loaded');
+    // Swiper slider
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: { delay: 4000 },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: { el: '.swiper-pagination', clickable: true },
     });
-
-    // Fetch top 5 movies
-    fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=622204a50e67a414e418580e6df24473&language=bs-BA&page=1")
-      .then(res => res.json())
-      .then(data => {
-        const movies = data.results.slice(0, 5);
-        const container = document.getElementById("film-list");
-        movies.forEach(m => {
-          const div = document.createElement("div");
-          div.className = "bg-gray-900 rounded-xl p-4 shadow-lg";
-          div.innerHTML = `
-            <img src="https://image.tmdb.org/t/p/w500${m.poster_path}" alt="${m.title}" class="rounded-lg mb-4">
-            <h3 class="text-lg font-bold">${m.title}</h3>
-            <p class="text-sm text-gray-400">Ocjena: ⭐ ${m.vote_average}</p>
-          `;
-          container.appendChild(div);
-        });
-      });
-
-    // Slider logic
-    const sliderInner = document.getElementById("slider-inner");
-    const prev = document.getElementById("prev");
-    const next = document.getElementById("next");
-    let index = 0;
-
-    function updateSlider() {
-      sliderInner.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    next.addEventListener("click", () => {
-      index = (index + 1) % 3;
-      updateSlider();
-    });
-
-    prev.addEventListener("click", () => {
-      index = (index - 1 + 3) % 3;
-      updateSlider();
-    });
-
-    setInterval(() => {
-      index = (index + 1) % 3;
-      updateSlider();
-    }, 5000);
   </script>
 </body>
 </html>
