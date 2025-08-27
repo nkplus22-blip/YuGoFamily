@@ -1,10 +1,10 @@
 {
-  "name": "Yugo Family",
+  "name": "Yugo Family IPTV",
   "short_name": "YugoFamily",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "background_color": "#000000",
+  "theme_color": "#111827",
   "icons": [
     {
       "src": "favicon.png",
