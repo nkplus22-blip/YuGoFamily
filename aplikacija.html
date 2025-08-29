@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YUGO-Family TV | Naša aplikacija</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f9ff;
+      color: #333;
+    }
+    header {
+      background: #004080;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    .menu-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #fff;
+    }
+    .overlay {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 64, 128, 0.95);
+      overflow-x: hidden;
+      transition: 0.4s;
+      padding-top: 60px;
+    }
+    .overlay a {
+      display: block;
+      text-decoration: none;
+      font-size: 1.5em;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .overlay a:hover {
+      background: #0066cc;
+    }
+    .overlay .closebtn {
+      position: absolute;
+      top: 15px;
+      right: 30px;
+      font-size: 40px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .app-hero {
+      background: #e6f0ff;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .app-hero h1 {
+      color: #004080;
+      font-size: 2.2em;
+    }
+    .download-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .download-btn {
+      background: #004080;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    .download-btn:hover {
+      background: #0066cc;
+    }
+    .platform-block {
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      max-width: 500px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    .platform-block img {
+      width: 48px;
+      height: 48px;
+    }
+    .qr-code {
+      margin-top: 25px;
+    }
+    footer {
+      background: #004080;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Naša aplikacija</h1>
+    <button class="menu-toggle" onclick="openNav()">☰</button>
+  </header>
+
+  <!-- overlay meni -->
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="index.html">Početna</a>
+    <a href="cjenovnik.html">Cijene i akcije</a>
+    <a href="top15.html">Top 15</a>
+    <a href="komentari.html">Komentari</a>
+    <a href="tim.html">Postani dio tima</a>
+    <a href="onama.html">O nama</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="placanje.html">Plaćanje</a>
+    <a href="kakodagledas.html">Kako da gledaš</a>
+    <a href="aplikacija.html">Naša aplikacija</a>
+  </div>
+
+  <section class="app-hero">
+    <h1>📱 Gledajte YUGO-Family TV i preko aplikacije</h1>
+    <p>Preuzmite našu zvaničnu aplikaciju i gledajte omiljene kanale direktno na svom telefonu, tabletu ili TV Box-u.</p>
+
+    <div class="download-container">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" alt="Android logo" width="40">
+      <a class="download-btn" href="https://apkpure.com/geniuses-player-pro/com.geniusesplayerpro.geniusesplayerproiptvbox/download">
+        ⬇️ Preuzmi Android aplikaciju
+      </a>
+    </div>
+
+    <div class="qr-code">
+      <p>👉 Ili skenirajte QR kod za brzo preuzimanje:</p>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://apkpure.com/geniuses-player-pro/com.geniusesplayerpro.geniusesplayerproiptvbox/download" alt="QR kod aplikacije">
+    </div>
+
+    <div class="platform-block">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple logo">
+      <p>🍏 iOS verzija aplikacije uskoro dostupna za iPhone i iPad</p>
+    </div>
+
+    <div class="platform-block">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Smart_TV_icon.png" alt="Smart TV">
+      <p>📺 Uskoro dostupna i na Smart TV uređajima</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 YUGO-Family TV | Kontakt: 
+      <a href="https://wa.me/4915755749502">WhatsApp</a> | 
+      Email: nkplus22@gmail.com
+    </p>
+  </footer>
+
+  <script>
+    function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+    }
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+  </script>
+
+</body>
+</html>
