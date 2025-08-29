@@ -1,89 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bs">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yugo Family IPTV</title>
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- SwiperJS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <title>YUGO-Family TV</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f9ff;
+      color: #333;
+    }
+    header {
+      background: #004080;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    .menu-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #fff;
+    }
+    .overlay {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 64, 128, 0.95);
+      overflow-x: hidden;
+      transition: 0.4s;
+      padding-top: 60px;
+    }
+    .overlay a {
+      display: block;
+      text-decoration: none;
+      font-size: 1.5em;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .overlay a:hover {
+      background: #0066cc;
+    }
+    .overlay .closebtn {
+      position: absolute;
+      top: 15px;
+      right: 30px;
+      font-size: 40px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .hero {
+      background: #e6f0ff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+      color: #004080;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    section h2 {
+      color: #004080;
+      font-size: 1.8em;
+      margin-bottom: 15px;
+    }
+    .btn {
+      background: #004080;
+      color: #fff;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      display: inline-block;
+      margin-top: 15px;
+    }
+    .btn:hover {
+      background: #0066cc;
+    }
+    footer {
+      background: #004080;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <!-- Hero -->
-  <header class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <img src="logo.png" alt="Yugo Family IPTV" class="logo">
-      <h1>Dobrodošli u Yugo Family IPTV</h1>
-      <p>Najbolji TV kanali i filmovi za cijelu porodicu</p>
-      <div class="cta-buttons">
-        <a href="https://paypal.me/ikmtvplus" class="btn">PayPal</a>
-        <a href="mailto:nkplus22@gmail.com" class="icon"><i class="fa-solid fa-envelope"></i></a>
-        <a href="https://wa.me/4915755749502" class="icon"><i class="fa-brands fa-whatsapp"></i></a>
-      </div>
-    </div>
+
+  <header>
+    <h1>YUGO-Family TV</h1>
+    <button class="menu-toggle" onclick="openNav()">☰</button>
   </header>
 
-  <!-- Movies -->
-  <section class="movies">
-    <h2>🎬 Top 5 Svjetskih Filmova</h2>
-    <div class="movie-grid">
-      <div class="movie">
-        <img src="https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg" alt="Inception">
-        <p>Inception</p>
-      </div>
-      <div class="movie">
-        <img src="https://image.tmdb.org/t/p/w500/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg" alt="Interstellar">
-        <p>Interstellar</p>
-      </div>
-      <div class="movie">
-        <img src="https://image.tmdb.org/t/p/w500/jRXYjXNq0Cs2TcJjLkki24MLp7u.jpg" alt="Avatar">
-        <p>Avatar</p>
-      </div>
-      <div class="movie">
-        <img src="https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg" alt="The Dark Knight">
-        <p>The Dark Knight</p>
-      </div>
-      <div class="movie">
-        <img src="https://image.tmdb.org/t/p/w500/ty8TGRuvJLPUmAR1H1nRIsgwvim.jpg" alt="Gladiator">
-        <p>Gladiator</p>
-      </div>
-    </div>
+  <!-- overlay meni -->
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="index.html">Početna</a>
+    <a href="cjenovnik.html">Cijene i akcije</a>
+    <a href="top15.html">Top 15</a>
+    <a href="komentari.html">Komentari</a>
+    <a href="tim.html">Postani dio tima</a>
+    <a href="onama.html">O nama</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="placanje.html">Plaćanje</a>
+    <a href="kakodagledas.html">Kako da gledaš</a>
+    <a href="aplikacija.html">Naša aplikacija</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Dobrodošli na YUGO-Family TV</h1>
+    <p>Najbolji izbor IPTV televizije za cijelu porodicu.</p>
   </section>
 
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <h2>💬 Naši korisnici kažu</h2>
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">“Najbolja usluga ikad! Moja porodica uživa svaki dan.” – Marko</div>
-        <div class="swiper-slide">“Veliki izbor kanala i filmova. Sve radi savršeno!” – Ivana</div>
-        <div class="swiper-slide">“Korisnička podrška je fenomenalna. Preporučujem svima!” – Emir</div>
-        <div class="swiper-slide">“Streaming bez prekida, kvalitet vrhunski.” – Jelena</div>
-        <div class="swiper-slide">“Odlični paketi i fer cijene. Svaka čast!” – Stefan</div>
-      </div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-pagination"></div>
-    </div>
+  <!-- Opis internet televizije -->
+  <section>
+    <h2>Šta je internet televizija?</h2>
+    <p>
+      Internet televizija (IPTV) omogućava gledanje TV kanala putem interneta, bez potrebe za klasičnim kablovskim ili satelitskim prijemnikom. 
+      Sve što vam je potrebno jeste internet konekcija i uređaj poput Smart TV-a, računara, TV Box-a, mobilnog telefona ili tableta.
+    </p>
+    <p>
+      Prednosti IPTV usluge su brojne: gledanje kanala bilo gdje u svijetu, kvalitetna HD i 4K slika, veliki izbor domaćih i stranih kanala, kao i mogućnost gledanja na više uređaja.
+      Sve više ljudi prelazi na internet televiziju jer nudi fleksibilnost i bolju cijenu u poređenju sa tradicionalnim operaterima.
+    </p>
   </section>
+
+  <!-- Teaser za aplikaciju -->
+  <section>
+    <h2>📱 Nova opcija – Naša aplikacija</h2>
+    <p>
+      Sada YUGO-Family TV možete gledati i putem naše aplikacije na Android uređajima, a uskoro i na iOS i Smart TV uređajima.
+    </p>
+    <a href="aplikacija.html" class="btn">➡️ Više o aplikaciji</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 YUGO-Family TV | Kontakt: 
+      <a href="https://wa.me/4915755749502">WhatsApp</a> | 
+      Email: nkplus22@gmail.com
+    </p>
+  </footer>
 
   <script>
-    // Swiper slider
-    const swiper = new Swiper('.swiper', {
-      loop: true,
-      autoplay: { delay: 4000 },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: { el: '.swiper-pagination', clickable: true },
-    });
+    function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+    }
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
   </script>
+
 </body>
 </html>
