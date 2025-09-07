@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplikacije za korištenje - YUGO-Family TV</title>
+  <style>
+    body { margin:0; font-family:Arial,sans-serif; background:#f8fbff; color:#333; }
+    header { background:#0056a6; color:#fff; padding:25px; text-align:center; position:relative; }
+
+    /* Navigacija */
+    nav { background:#007bff; display:flex; justify-content:center; flex-wrap:wrap; }
+    nav a { color:#fff; text-decoration:none; padding:12px 18px; display:block; }
+    nav a:hover { background:#e6f0ff; color:#0056a6; }
+
+    /* Hamburger meni */
+    .menu-toggle {
+      display:none;
+      flex-direction:column;
+      cursor:pointer;
+      padding:10px;
+      position:absolute;
+      top:20px;
+      right:20px;
+    }
+    .menu-toggle div {
+      width:30px;
+      height:4px;
+      background:#fff;
+      margin:5px 0;
+      transition:0.3s;
+    }
+
+    /* Mobile prikaz */
+    @media (max-width:768px) {
+      nav { display:none; flex-direction:column; text-align:center; }
+      nav.active { display:flex; }
+      .menu-toggle { display:flex; }
+    }
+
+    .container { max-width:1100px; margin:40px auto; padding:0 20px; }
+    h2 { text-align:center; color:#0056a6; margin-bottom:20px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px; }
+    .card { background:#fff; border:2px solid #007bff; border-radius:10px; padding:20px; text-align:center; transition:.3s; }
+    .card:hover { transform:translateY(-5px); }
+    .card h3 { margin-top:0; color:#0056a6; }
+    .card p { margin:10px 0; font-size:1.1em; }
+
+    .highlight { background:#007bff; color:#fff; border-radius:10px; padding:30px 20px; text-align:center; margin:40px 0; }
+    .highlight a.btn { display:inline-block; margin-top:15px; padding:12px 20px; background:#ffcc00; color:#0056a6; text-decoration:none; border-radius:6px; font-weight:bold; }
+    .highlight a.btn:hover { background:#e6b800; }
+
+    footer { background:#0056a6; color:#fff; text-align:center; padding:20px; margin-top:40px; }
+    footer a { color:#ffdd00; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Aplikacije za korištenje</h1>
+    <p>Podržane aplikacije za YUGO-Family TV</p>
+
+    <!-- Hamburger dugme -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <nav id="navbar">
+    <a href="index.html">Početna</a>
+    <a href="cjenovnik.html">Cijene i akcije</a>
+    <a href="aplikacije.html">Aplikacije za korištenje</a>
+    <a href="komentari.html">Komentari</a>
+    <a href="onama.html">O nama</a>
+    <a href="tim.html">Postani dio tima</a>
+    <a href="top15.html">Top 15</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+
+  <div class="container">
+    <h2>Podržane aplikacije</h2>
+<div class="grid">
+  <div class="card"><h3>Smart One IPTV</h3></div>
+  <div class="card"><h3>Smart IPTV</h3></div>
+  <div class="card"><h3>SSIPTV</h3></div>
+  <div class="card"><h3>Net IPTV</h3></div>
+  <div class="card"><h3>GSE Smart IPTV</h3></div>
+  <div class="card"><h3>IPTV Smarters</h3></div>
+  <div class="card"><h3>XCIPTV Player</h3></div>
+  <div class="card"><h3>Perfect Player</h3></div>
+  <div class="card"><h3>Lazy IPTV</h3></div>
+  <div class="card"><h3>IPTV Extreme</h3></div>
+  <div class="card"><h3>OTT Navigator</h3></div>
+  <div class="card"><h3>IPTV Pro</h3></div>
+  <div class="card"><h3>IPTV Core</h3></div>
+  <div class="card"><h3>IPTV+ Player</h3></div>
+  <div class="card"><h3>XCIPTV Pro</h3></div>
+  <div class="card"><h3>iMPlayer</h3></div>
+  <div class="card"><h3>ProgTV</h3></div>
+  <div class="card"><h3>OTTPlayer</h3></div>
+</div>
+
+    <div class="highlight">
+      <h2>Preuzmite našu aplikaciju</h2>
+      <p>Za lakši pristup YUGO-Family TV-u na vašem Android uređaju.</p>
+      <a class="btn" href="https://www.google.com/amp/s/apkpure.com/geniuses-player-pro/com.geniusesplayerpro.geniusesplayerproiptvbox/amp" target="_blank">Preuzmi aplikaciju</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 YUGO-Family TV</p>
+    <p>Email: <a href="mailto:nkplus22@gmail.com">nkplus22@gmail.com</a> | WhatsApp: <a href="https://wa.me/4915755749502">+49 157 55749502</a></p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navbar").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
